@@ -1,51 +1,20 @@
 
-
 ### How To Open :
 
+**Note:** Before we start first we need to check these ports 3307,8088,443,9000
+If they are used, we need to determinate them
 
-
-First instal composer.json dependencies by running in terminal
-
+After cloning Repo
 ```bach 
-composer update
+sudo docker login
 ```
-second instal package.json dependencies by running in terminal
+And Just run (it Takes some time)
 ```bach 
-npm install
+sudo docker-compose up -d
 ```
-
-Create env file with your own database configration
-
--Windows
+Or if you using docker compose cli plugin
+run
 
 ```bach 
-copy .env.example .env
-```
-Linux/Mac
-
-```bach 
-cp .env.example .env
-```
-
-Then you need To generate New Key By Running 
-
-
-```bach 
-php artisan key:generate
-```
-
-then you need to migrate to database ny running
-
-```bach 
-php artisan migrate
-```
-
-then run
-```bach 
-php artisan optimize
-```
-
-to start server on localhost:8000
-```bach 
-php artisan serve
+sudo docker compose up -d
 ```
