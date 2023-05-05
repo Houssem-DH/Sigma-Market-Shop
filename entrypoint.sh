@@ -3,7 +3,6 @@
 if [ ! -f ".env" ]; then
     echo "Creating env file"
     cp .env.example .env
-    php artisan key:generate
     
 else 
     echo "env file exists"
@@ -11,9 +10,6 @@ fi
 if [ ! -d "vendor" ]; then
     composer install
     composer update
-fi
-
-if [ ! -d "storage" ]; then
     chmod -R 777 /var/www/html/storage 
     touch /var/www/html/storage/logs/laravel.log 
     chmod 777 /var/www/html/storage/logs/laravel.log 
@@ -24,9 +20,13 @@ if [ ! -d "storage" ]; then
     chown -R www-data:www-data /path/to/laravel/storage/ 
 fi
 
+if [ ! -d "storage" ]; then
+    
+fi
 
 
 
+php artisan key:generate
 php artisan cache:clear
 php artisan config:clear
 php artisan optimize
