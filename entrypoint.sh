@@ -3,6 +3,7 @@
 if [ ! -f ".env" ]; then
     echo "Creating env file"
     cp .env.example .env
+
     
 else 
     echo "env file exists"
@@ -20,9 +21,6 @@ if [ ! -d "vendor" ]; then
     chown -R www-data:www-data /path/to/laravel/storage/ 
 fi
 
-if [ ! -d "storage" ]; then
-    
-fi
 
 
 
