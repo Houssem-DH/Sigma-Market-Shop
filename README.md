@@ -5,16 +5,12 @@
 If they are used, we need to determinate them
 
 After cloning Repo
+Just run (it Takes some time)
 ```bach 
-sudo docker login
+sudo docker-compose up -d --build 
 ```
-And Just run (it Takes some time)
-```bach 
-sudo docker-compose up -d
-```
-Or if you using docker compose cli plugin
-run
+Or if you using docker compose V2 run
 
 ```bach 
-sudo docker compose up -d
+sudo docker compose up -d --build 
 ```

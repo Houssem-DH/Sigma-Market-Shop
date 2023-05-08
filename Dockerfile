@@ -44,6 +44,7 @@ RUN chown -R www-data:www-data \
     /var/www/html/bootstrap/cache
 RUN chmod +x entrypoint.sh
 
+RUN cp .env.example .env
 # Expose port 9000 and start php-fpm server (for FastCGI Process Manager)
 EXPOSE 9000
 ENTRYPOINT ["./entrypoint.sh"]
