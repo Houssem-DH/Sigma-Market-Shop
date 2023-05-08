@@ -3,6 +3,7 @@
 if [ ! -f ".env" ]; then
     echo "Creating env file"
     cp .env.example .env
+
     
 else 
     echo "env file exists"

@@ -1,27 +1,6 @@
 version: '3.0'
 services:
 
-#PHP Service
-  app:
-    depends_on:
-      - db
-      - webserver
-    build:
-      context: .
-      target: php
-    container_name: app
-    restart: unless-stopped
-    tty: true
-    environment:
-      SERVICE_NAME: app
-      SERVICE_TAGS: dev
-    working_dir: /var/www/html/
-    volumes:
-      - ./:/var/www/html/
-      - ./php/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
-    networks:
-      - app-network
-
 
 #MySQL Service
   db:
@@ -58,6 +37,27 @@ services:
     volumes:
       - ./:/var/www/html/
       - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+
+#PHP Service
+  app:
+    depends_on:
+      - db
+      - webserver
+    build:
+      context: .
+      target: php
+    container_name: app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www/html/
+    volumes:
+      - ./:/var/www/html/
+      - ./php/laravel.ini:/usr/local/etc/php/conf.d/laravel.ini
     networks:
       - app-network
 
