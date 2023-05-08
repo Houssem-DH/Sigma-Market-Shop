@@ -20,9 +20,6 @@ if [ ! -d "vendor" ]; then
     chown -R www-data:www-data /path/to/laravel/storage/ 
 fi
 
-if [ ! -d "storage" ]; then
-    
-fi
 
 
 

@@ -61,4 +61,3 @@ COPY package-lock.json package.json /var/www/html/
 
 RUN npm install 
 
-VOLUME /var/www/html/node_modules/
