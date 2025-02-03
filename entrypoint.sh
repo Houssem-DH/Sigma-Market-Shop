@@ -28,7 +28,6 @@ php artisan key:generate
 php artisan cache:clear
 php artisan config:clear
 php artisan optimize
-php artisan migrate
 php-fpm
 
 

@@ -14,3 +14,8 @@ Or if you using docker compose V2 run
 ```bach 
 sudo docker compose up -d --build 
 ```
+
+Run The App On Port 8088
+```bach 
+localhost:8088
+```
