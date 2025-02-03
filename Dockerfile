@@ -7,6 +7,7 @@ COPY composer.lock composer.json /var/www/html/
 
 # Set working directory
 WORKDIR /var/www/html/
+COPY entrypoint.sh .
 
 # Install dependencies for the operating system software
 RUN apt-get update && apt-get install -y \
@@ -46,7 +47,7 @@ RUN chmod +x entrypoint.sh
 
 # Expose port 9000 and start php-fpm server (for FastCGI Process Manager)
 EXPOSE 9000
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/var/www/html/entrypoint.sh"]
 
 # ========================================================================
 
